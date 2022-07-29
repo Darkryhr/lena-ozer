@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { BiMenuAltRight } from 'react-icons/bi';
+import { BiMenuAltRight, BiX } from 'react-icons/bi';
 import { TbGlobe } from 'react-icons/tb';
 
 const routes = [
@@ -69,14 +69,25 @@ const Navbar = () => {
         ))}
       </div>
       <button
-        className='inline-block md:hidden cursor-pointer'
-        onClick={() => setOpen(state => !state)}
+        className={`inline-block md:hidden cursor-pointer ${
+          open ? 'hidden' : ''
+        }`}
+        onClick={() => setOpen(true)}
       >
         <BiMenuAltRight size={30} />
+      </button>
+      <button
+        className={`inline-block md:hidden cursor-pointer ${
+          !open ? 'hidden' : ''
+        }`}
+        onClick={() => setOpen(false)}
+      >
+        <BiX size={30} />
       </button>
     </nav>
   );
 };
+
 export default Navbar;
 
 const ActiveBorder = () => (
