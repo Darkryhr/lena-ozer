@@ -8,7 +8,7 @@ const Contact = () => {
           Let&apos;s get in touch.
         </h1>
         <form className='flex flex-col'>
-          <div class='grid md:grid-cols-2 md:gap-4'>
+          <div className='grid md:grid-cols-2 md:gap-4'>
             <div className='form-group mb-6'>
               <label
                 htmlFor='inputName'
