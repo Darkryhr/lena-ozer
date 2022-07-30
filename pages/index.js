@@ -3,7 +3,7 @@ import { GiAbstract076 } from 'react-icons/gi';
 
 const Home = () => {
   return (
-    <div className='mx-auto h-screen flex justify-center flex-col px-8 relative max-w-7xl pb-28'>
+    <div className='mx-auto h-screen flex justify-center flex-col px-8 relative max-w-7xl pb-40'>
       <h1 className='md:text-8xl text-6xl font-extrabold font-serif z-10'>
         Hello, I&apos;m Lena.
       </h1>
