@@ -2,7 +2,7 @@ import React from 'react';
 
 const Contact = () => {
   return (
-    <div className='mx-auto h-screen flex items-start px-12 max-w-7xl justify-center md:pt-40 pt-28 md:mb-0 mb-20'>
+    <div className='mx-auto h-screen flex items-start px-12 max-w-7xl justify-center md:pt-24 pt-20 md:mb-0 mb-20 pb-16'>
       <div className='flex flex-col w-full max-w-5xl'>
         <h1 className='text-5xl font-extrabold font-serif text-gray-900 mb-8'>
           Let&apos;s get in touch.
