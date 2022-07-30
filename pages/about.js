@@ -18,7 +18,7 @@ const About = () => {
             exercitation consectetur ea.
           </p>
         </div>
-        <div className='absolute md:top-8 md:right-6 opacity-50 -bottom-44 left-0'>
+        <div className='absolute md:top-8 md:right-6 md:left-auto md:bottom-auto opacity-50 -bottom-44 left-0'>
           <Image
             src='/signature.svg'
             width={400}
