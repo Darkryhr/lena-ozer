@@ -54,6 +54,7 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
+
       <div
         ref={ref}
         className={`md:block md:relative md:top-0 md:w-fit md:p-0 ${
@@ -68,6 +69,7 @@ const Navbar = () => {
           </CustomLink>
         ))}
       </div>
+
       <button
         className={`inline-block md:hidden cursor-pointer ${
           open ? 'hidden' : ''
