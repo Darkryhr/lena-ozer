@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 
-const SEO = ({ title = 'Lena Ozer', desc = 'Teacher, Mother, Writer.' }) => {
+const SEO = ({ title = 'Lena Ozer', desc = ' Mother, Teacher, Writer.' }) => {
   return (
     <Head>
       <meta charSet='utf-8' />
