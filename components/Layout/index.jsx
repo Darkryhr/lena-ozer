@@ -1,5 +1,4 @@
 import React from 'react';
-import { motion } from 'framer-motion';
 
 import Footer from '@components/Footer';
 import Navbar from '@components/Navbar';
@@ -10,12 +9,6 @@ const Layout = ({ children }) => {
     /* Optional options */
     threshold: 0,
   });
-
-  const variants = {
-    hidden: { opacity: 0, x: -200, y: 0 },
-    enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 0, y: -100 },
-  };
 
   return (
     <>
@@ -28,16 +21,9 @@ const Layout = ({ children }) => {
         <Navbar />
       </header>
       <div className='h-16' ref={ref}></div>
-      <motion.main
-        initial='hidden'
-        animate='enter'
-        exit='exit'
-        variants={variants}
-        transition={{ type: 'linear' }}
-        className='h-[calc(100vh-64px)] mx-auto px-2 overflow-hidden'
-      >
+      <main className='h-[calc(100vh-64px)] mx-auto px-2 overflow-hidden'>
         {children}
-      </motion.main>
+      </main>
       <Footer />
     </>
   );
