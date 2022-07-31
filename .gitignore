@@ -5,6 +5,8 @@
 /.pnp
 .pnp.js
 
+seagreen-salmon/node_modules
+
 # testing
 /coverage
 

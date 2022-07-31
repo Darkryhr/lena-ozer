@@ -9,8 +9,6 @@ const Layout = ({ children }) => {
     threshold: 0,
   });
 
-  console.log(inView);
-
   return (
     <>
       {/* TODO: add color to header only after some scrolling */}
