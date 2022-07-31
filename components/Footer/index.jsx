@@ -48,7 +48,9 @@ const Footer = () => {
             {routes.map(route => (
               <li key={route.href} className=''>
                 <Link href={route.href} passHref>
-                  <a className='font-semibold'>{route.name}</a>
+                  <a className='font-semibold transition hover:opacity-75'>
+                    {route.name}
+                  </a>
                 </Link>
               </li>
             ))}

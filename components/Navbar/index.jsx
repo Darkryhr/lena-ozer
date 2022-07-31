@@ -38,10 +38,13 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className='flex justify-between px-6 py-4 items-center max-w-7xl mx-auto w-full  z-50'>
+    <nav className='flex justify-between px-6 py-4 items-center max-w-7xl mx-auto w-full z-50'>
       <div>
         <Link href='/' passHref>
-          <div className='flex items-center' onClick={() => setOpen(false)}>
+          <div
+            className='flex items-center transition-opacity ease-in-out hover:opacity-70'
+            onClick={() => setOpen(false)}
+          >
             <TbGlobe
               size={20}
               style={{
@@ -98,16 +101,20 @@ const ActiveBorder = () => (
 
 const CustomLink = ({ children, href, setOpen }) => {
   const router = useRouter();
+  const isActive = path => {
+    if (href === '/') return path === href;
+    else return path.includes(href);
+  };
 
   return (
     <Link href={href} passHref>
       <a
-        className={`md:ml-5 ml-8 py-2 md:p-0 text-sm font-semibold hover:underline  underline-offset-1`}
+        className={`md:ml-5 ml-8 py-2 md:p-0 text-sm transition font-semibold hover:underline hover:opacity-75  underline-offset-1`}
         onClick={() => setOpen(false)}
       >
         <span className='relative'>
           {children}
-          {router.pathname === href && <ActiveBorder />}
+          {isActive(router.pathname) && <ActiveBorder />}
         </span>
       </a>
     </Link>

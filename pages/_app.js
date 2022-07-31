@@ -1,13 +1,20 @@
+import { AnimatePresence } from 'framer-motion';
+
 import Layout from '@components/Layout';
 import SEO from '@components/SEO';
-import Head from 'next/head';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }) {
   return (
     <Layout>
       <SEO />
-      <Component {...pageProps} />
+      <AnimatePresence
+        exitBeforeEnter
+        initial={false}
+        onExitComplete={() => window.scrollTo(0, 0)}
+      >
+        <Component {...pageProps} />
+      </AnimatePresence>
     </Layout>
   );
 }
