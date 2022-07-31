@@ -62,7 +62,7 @@ const Navbar = () => {
         ref={ref}
         className={`md:block md:relative md:top-0 md:w-fit md:p-0 ${
           open
-            ? 'flex flex-col absolute top-[64px] left-0 space-y-8 w-full pt-4 pb-6 bg-rose-100 md:bg-transparent'
+            ? 'flex flex-col absolute top-[64px] left-0 w-full bg-rose-100 md:bg-transparent'
             : 'hidden'
         }`}
       >
@@ -74,7 +74,7 @@ const Navbar = () => {
       </div>
 
       <button
-        className={`inline-block md:hidden cursor-pointer ${
+        className={`inline-block md:hidden transition hover:scale-110 hover:opacity-70 focus:scale-90 cursor-pointer ${
           open ? 'hidden' : ''
         }`}
         onClick={() => setOpen(true)}
@@ -82,7 +82,7 @@ const Navbar = () => {
         <BiMenuAltRight size={30} />
       </button>
       <button
-        className={`inline-block md:hidden cursor-pointer ${
+        className={`inline-block md:hidden transition hover:scale-110 hover:opacity-70 focus:scale-90 cursor-pointer ${
           !open ? 'hidden' : ''
         }`}
         onClick={() => setOpen(false)}
@@ -109,7 +109,7 @@ const CustomLink = ({ children, href, setOpen }) => {
   return (
     <Link href={href} passHref>
       <a
-        className={`md:ml-5 ml-8 py-2 md:p-0 text-sm transition font-semibold hover:underline hover:opacity-75  underline-offset-1`}
+        className={`md:pl-6 pl-8 md:py-2 py-6 md:p-0 text-sm transition font-semibold hover:underline hover:opacity-75 underline-offset-1 hover:bg-rose-200`}
         onClick={() => setOpen(false)}
       >
         <span className='relative'>
