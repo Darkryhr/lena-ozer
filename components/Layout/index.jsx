@@ -16,7 +16,7 @@ const Layout = ({ children }) => {
       <header
         className={`w-full transition ease-in-out ${
           inView ? 'bg-transparent' : 'bg-rose-50 shadow-sm'
-        }  fixed top-0 left-1/2 transform -translate-x-1/2 z-50`}
+        }  fixed top-0 left-1/2 transform -translate-x-1/2 z-40`}
       >
         <Navbar />
       </header>

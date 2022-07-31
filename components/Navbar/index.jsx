@@ -38,7 +38,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className='flex justify-between px-6 py-4 items-center max-w-7xl mx-auto w-full z-50'>
+    <nav className='flex justify-between px-6 py-4 items-center max-w-7xl mx-auto w-full z-40'>
       <div>
         <Link href='/' passHref>
           <div
