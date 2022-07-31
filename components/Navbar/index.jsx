@@ -109,7 +109,7 @@ const CustomLink = ({ children, href, setOpen }) => {
   return (
     <Link href={href} passHref>
       <a
-        className={`md:pl-6 pl-8 md:py-2 py-6 md:p-0 text-sm transition font-semibold hover:underline hover:opacity-75 underline-offset-1 hover:bg-rose-200`}
+        className={`md:pl-6 pl-8 md:py-2 py-6 md:p-0 text-sm transition font-semibold hover:underline md:hover:bg-transparent hover:opacity-75 underline-offset-1 hover:bg-rose-200`}
         onClick={() => setOpen(false)}
       >
         <span className='relative'>
