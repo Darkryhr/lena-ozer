@@ -3,7 +3,7 @@ import Link from 'next/link';
 import React from 'react';
 import { sanityClient } from '../../sanity';
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   const posts = await sanityClient.fetch(`
     *[_type == "post"]{
 _id,
@@ -20,6 +20,7 @@ _createdAt,
     props: {
       posts,
     },
+    revalidate: 60 * 60 * 24,
   };
 }
 
