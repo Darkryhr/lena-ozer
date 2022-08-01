@@ -45,8 +45,6 @@ export const getStaticProps = async ({ params }) => {
 };
 
 const BlogPost = ({ post }) => {
-  console.log(post);
-
   const {
     title = 'Missing title',
     name = 'Missing name',
@@ -55,7 +53,7 @@ const BlogPost = ({ post }) => {
   } = post;
 
   return (
-    <div className='mx-auto h-screen flex md:items-start items-start pt-12 px-8 max-w-7xl justify-center pb-24'>
+    <div className='mx-auto h-screen flex md:items-start items-start pt-12 md:px-8 px-3 max-w-7xl justify-center pb-24'>
       <article className='w-full'>
         <h1 className='font-extrabold text-7xl font-serif'>{title}</h1>
         <div className='flex items-center py-3'>

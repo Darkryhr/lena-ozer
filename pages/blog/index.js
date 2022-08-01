@@ -1,3 +1,4 @@
+import SectionWrapper from '@components/SectionWrapper';
 import Link from 'next/link';
 import React from 'react';
 import { sanityClient } from '../../sanity';
@@ -24,13 +25,18 @@ _createdAt,
 
 const Blog = ({ posts }) => {
   return (
-    <div className='mx-auto flex-col h-screen flex md:items-start items-start pt-12 px-8 max-w-7xl justify-start pb-24'>
-      <h1 className='text-5xl font-extrabold font-serif text-gray-900 mb-8'>
-        Blog
-      </h1>
-      {posts.reverse().map(post => (
-        <PostItem post={post} key={post._id} />
-      ))}
+    <div className='mx-auto flex-col h-screen flex md:items-start items-start pt-12 md:px-8 px-3 max-w-7xl justify-start pb-24'>
+      <SectionWrapper delay={0.1}>
+        <h1 className='text-5xl font-extrabold font-serif text-gray-900 mb-8'>
+          Blog
+        </h1>
+      </SectionWrapper>
+      {/* //TODO: add delay to each post item so they stagger */}
+      <SectionWrapper delay={0.2}>
+        {posts.reverse().map(post => (
+          <PostItem post={post} key={post._id} />
+        ))}
+      </SectionWrapper>
     </div>
   );
 };

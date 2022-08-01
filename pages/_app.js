@@ -27,26 +27,24 @@ function MyApp({ Component, pageProps }) {
     router.events.on('routeChangeError', handleComplete);
   }, [router]);
 
-  const variants = {
-    hidden: { opacity: 0, x: -200, y: 0 },
-    enter: { opacity: 1, x: 0, y: 0 },
-    exit: { opacity: 0, x: 0, y: -100 },
-  };
-
   return (
     <Layout>
       <SEO />
-      <AnimatePresence
-        exitBeforeEnter
-        initial={false}
-        onExitComplete={() => window.scrollTo(0, 0)}
-      >
+      <AnimatePresence exitBeforeEnter={true} initial={false}>
         <motion.main
-          initial='hidden'
-          animate='enter'
+          initial='pageInitial'
+          animate='pageAnimate'
+          style={{ width: '100%' }}
+          key={router.route}
           exit='exit'
-          variants={variants}
-          transition={{ type: 'linear' }}
+          variants={{
+            pageInitial: {
+              opacity: 0,
+            },
+            pageAnimate: {
+              opacity: 1,
+            },
+          }}
         >
           {pageLoading ? <Loader /> : <Component {...pageProps} />}
         </motion.main>
