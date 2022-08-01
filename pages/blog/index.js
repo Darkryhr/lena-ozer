@@ -36,9 +36,9 @@ const Blog = ({ posts }) => {
 
       const sortProperty = types[type];
 
-      const sorted = [...posts]
-        .sort((a, b) => b[sortProperty] - a[sortProperty])
-        .reverse();
+      const sorted = [...posts].sort(
+        (a, b) => b[sortProperty] - a[sortProperty]
+      );
       setSortedPosts(sorted);
     };
 
