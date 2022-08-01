@@ -5,7 +5,7 @@ import { GiAbstract076 } from 'react-icons/gi';
 const Home = () => {
   return (
     <div className='mx-auto h-screen flex justify-center flex-col px-6 relative max-w-7xl pb-40'>
-      <SectionWrapper delay={0.1} styles={{ zIndex: '10' }}>
+      <SectionWrapper delay={0.1} styles={{ zIndex: '99' }}>
         <h1 className='md:text-8xl text-6xl font-extrabold font-serif z-10 text-gray-900'>
           Hello, I&apos;m Lena.
         </h1>

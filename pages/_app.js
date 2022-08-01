@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/router';
 import { AnimatePresence, motion } from 'framer-motion';
 
 import Layout from '@components/Layout';
@@ -7,9 +6,8 @@ import SEO from '@components/SEO';
 import Loader from '@components/Loader';
 import '../styles/globals.css';
 
-function MyApp({ Component, pageProps }) {
+function MyApp({ Component, pageProps, router }) {
   const [pageLoading, setPageLoading] = useState(false);
-  const router = useRouter();
 
   useEffect(() => {
     const handleStart = () => {
@@ -36,7 +34,6 @@ function MyApp({ Component, pageProps }) {
           animate='pageAnimate'
           style={{ width: '100%' }}
           key={router.route}
-          exit='exit'
           variants={{
             pageInitial: {
               opacity: 0,

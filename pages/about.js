@@ -7,7 +7,7 @@ const About = () => {
     <div className='mx-auto h-screen flex md:items-center items-start md:pt-0 pt-12 px-8 max-w-7xl justify-center pb-24'>
       <div className='flex items-start justify-center md:space-x-6 md:flex-row flex-col relative'>
         <SectionWrapper delay={0.1}>
-          <div className='min-w-[200px] min-h-[200px] bg-gray-300 rounded-full'></div>
+          <div className='w-[220px] h-[220px] bg-gray-300 rounded-full'></div>
         </SectionWrapper>
         <div className='flex flex-col mt-6 md:max-w-2xl text-clip'>
           <SectionWrapper delay={0.1}>
