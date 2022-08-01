@@ -1,5 +1,6 @@
-import SectionWrapper from '@components/SectionWrapper';
 import React from 'react';
+import { RiSendPlaneFill } from 'react-icons/ri';
+import SectionWrapper from '@components/SectionWrapper';
 
 const Contact = () => {
   return (
@@ -61,9 +62,10 @@ const Contact = () => {
             </div>
             <button
               type='submit'
-              className='w-40 px-6 py-3 bg-rose-500  text-white  font-medium  leading-tight  rounded  shadow-md  hover:bg-rose-600 hover:shadow-lg  focus:bg-rose-600 focus:shadow-lg focus:outline-none focus:ring-0  active:bg-rose-700 active:shadow-lg  transition  duration-150  ease-in-out'
+              className='flex justify-center items-center w-32 py-3 bg-rose-500  text-white  font-medium  leading-tight  rounded  shadow-md  hover:bg-rose-600 hover:shadow-lg  focus:bg-rose-600 focus:shadow-lg focus:outline-none focus:ring-0  active:bg-rose-700 active:shadow-lg  transition  duration-150  ease-in-out space-x-2'
             >
-              Send
+              <RiSendPlaneFill />
+              <span className='pr-1.5'>Send</span>
             </button>
           </form>
         </SectionWrapper>

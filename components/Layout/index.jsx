@@ -14,9 +14,9 @@ const Layout = ({ children }) => {
     <>
       {/* TODO: add color to header only after some scrolling */}
       <header
-        className={`w-full transition ease-in-out ${
+        className={`w-full transition ease-in-out z-[999] ${
           inView ? 'bg-transparent' : 'bg-rose-50 shadow-sm'
-        }  fixed top-0 left-1/2 transform -translate-x-1/2 z-40`}
+        }  fixed top-0 left-1/2 transform -translate-x-1/2`}
       >
         <Navbar />
       </header>

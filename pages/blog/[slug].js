@@ -1,7 +1,10 @@
 import React from 'react';
+import { CgArrowLongLeft } from 'react-icons/cg';
 import { sanityClient, urlFor } from 'sanity';
 import { PortableText } from '@portabletext/react';
 import SectionWrapper from '@components/SectionWrapper';
+import Link from 'next/link';
+import Image from 'next/image';
 
 export const getStaticPaths = async () => {
   const paths = await sanityClient.fetch(
@@ -56,6 +59,11 @@ const BlogPost = ({ post }) => {
   return (
     <div className='mx-auto h-screen flex md:items-start items-start pt-12 md:px-8 px-3 max-w-7xl justify-center pb-24'>
       <article className='w-full'>
+        <Link href='/blog'>
+          <button className='transition hover:opacity-70 mb-4 hover:-translate-x-1'>
+            <CgArrowLongLeft size={35} />
+          </button>
+        </Link>
         <SectionWrapper delay={0.1}>
           <h1 className='font-extrabold text-7xl font-serif'>{title}</h1>
         </SectionWrapper>
@@ -63,10 +71,16 @@ const BlogPost = ({ post }) => {
           <div className='flex items-center py-3'>
             {authorImage && (
               <div className='inline-block'>
-                <img
+                <Image
                   src={urlFor(authorImage).width(30).url()}
+                  width='30px'
+                  height='30px'
                   alt={`${name}'s picture`}
                 />
+                {/* <img
+                  src={urlFor(authorImage).width(30).url()}
+                  alt={`${name}'s picture`}
+                /> */}
               </div>
             )}
             <span className='font-normal text-sm text-gray-600 ml-2'>
