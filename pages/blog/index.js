@@ -1,6 +1,6 @@
+import React, { useState, useEffect } from 'react';
 import SectionWrapper from '@components/SectionWrapper';
 import Link from 'next/link';
-import React from 'react';
 import { sanityClient } from '../../sanity';
 
 export async function getStaticProps() {
@@ -25,14 +25,37 @@ _createdAt,
 }
 
 const Blog = ({ posts }) => {
+  const [sortedPosts, setSortedPosts] = useState([]);
+  const [sortType, setSortType] = useState('_createdAt');
+
+  useEffect(() => {
+    const sortArray = type => {
+      const types = {
+        createdAt: '_createdAt',
+      };
+
+      const sortProperty = types[type];
+
+      const sorted = [...posts]
+        .sort((a, b) => b[sortProperty] - a[sortProperty])
+        .reverse();
+      setSortedPosts(sorted);
+    };
+
+    sortArray(sortType);
+  }, [sortType]);
+
   return (
     <div className='mx-auto flex-col h-screen flex md:items-start items-start pt-12 md:px-8 px-3 w-full max-w-7xl justify-start pb-24'>
       <SectionWrapper delay={0.1}>
         <h1 className='text-5xl font-extrabold font-serif text-gray-900 mb-8'>
           Blog
         </h1>
+        {/* <select onChange={e => setSortType(e.target.value)}>
+          <option value='albums'>Date created</option>
+        </select> */}
       </SectionWrapper>
-      {posts.reverse().map((post, index) => (
+      {sortedPosts.reverse().map((post, index) => (
         <PostItem post={post} key={post._id} index={index + 1} />
       ))}
     </div>
