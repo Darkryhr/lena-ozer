@@ -5,6 +5,7 @@ import { PortableText } from '@portabletext/react';
 import SectionWrapper from '@components/SectionWrapper';
 import Link from 'next/link';
 import Image from 'next/image';
+import { SanityImage } from 'sanity';
 
 export const getStaticPaths = async () => {
   const paths = await sanityClient.fetch(
@@ -55,10 +56,9 @@ const BlogPost = ({ post }) => {
     authorImage,
     body = [],
   } = post;
-
   return (
-    <div className='mx-auto h-screen flex md:items-start items-start pt-12 md:px-8 px-3 max-w-7xl justify-center pb-24'>
-      <article className='w-full'>
+    <div className='mx-auto min-h-screen flex md:items-start items-start pt-12 md:px-8 px-3 max-w-7xl justify-center pb-24 relative'>
+      <article className='px-4'>
         <Link href='/blog'>
           <button className='transition hover:opacity-70 mb-4 hover:-translate-x-1'>
             <CgArrowLongLeft size={35} />
@@ -76,6 +76,7 @@ const BlogPost = ({ post }) => {
                   width='30px'
                   height='30px'
                   alt={`${name}'s picture`}
+                  className='rounded-2xl'
                 />
                 {/* <img
                   src={urlFor(authorImage).width(30).url()}
@@ -89,8 +90,8 @@ const BlogPost = ({ post }) => {
           </div>
         </SectionWrapper>
         <SectionWrapper delay={0.3}>
-          <div className='mt-4'>
-            <PortableText value={body} />
+          <div className='mt-4 px-1'>
+            <PortableText value={body} components={myPortableTextComponents} />
           </div>
         </SectionWrapper>
       </article>
@@ -99,3 +100,16 @@ const BlogPost = ({ post }) => {
 };
 
 export default BlogPost;
+
+const myPortableTextComponents = {
+  block: {
+    normal: ({ children }) => {
+      return <p className='my-5'>{children}</p>;
+    },
+  },
+  types: {
+    image: ({ value }) => {
+      return <SanityImage {...value} />;
+    },
+  },
+};

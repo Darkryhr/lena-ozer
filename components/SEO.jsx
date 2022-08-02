@@ -37,10 +37,7 @@ const SEO = ({ title = 'Lena Ozer', desc = ' Mother, Teacher, Writer.' }) => {
       <meta property='og:site_name' content='Lena Ozer' />
       <meta property='og:type' content='website' />
       <meta property='og:description' content={desc} />
-      <meta
-        property='og:image'
-        content='https://lena-ozer.vercel.app/card.png'
-      />
+      <meta property='og:image' content='https://www.lena-ozer.com/card.png' />
       <title>{title + ' | ' + desc}</title>
     </Head>
   );

@@ -21,10 +21,10 @@ const Layout = ({ children }) => {
         <Navbar />
       </header>
       <div className='h-16' ref={ref}></div>
-      <main className='h-[calc(100vh-64px)] mx-auto px-2 overflow-hidden'>
+      <main className='h-[calc(100vh-64px)] mx-auto px-2'>
         {children}
+        <Footer />
       </main>
-      <Footer />
     </>
   );
 };
