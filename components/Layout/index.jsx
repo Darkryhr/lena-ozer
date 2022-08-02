@@ -21,10 +21,8 @@ const Layout = ({ children }) => {
         <Navbar />
       </header>
       <div className='h-16' ref={ref}></div>
-      <main className='h-[calc(100vh-64px)] mx-auto px-2'>
-        {children}
-        <Footer />
-      </main>
+      <main className='min-h-[calc(100vh-64px)] mx-auto'>{children}</main>
+      <Footer />
     </>
   );
 };

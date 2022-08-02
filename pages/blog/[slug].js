@@ -55,15 +55,25 @@ const BlogPost = ({ post }) => {
     name = 'Missing name',
     authorImage,
     body = [],
+    mainImage,
   } = post;
+
   return (
-    <div className='mx-auto min-h-screen flex md:items-start items-start pt-12 md:px-8 px-3 max-w-7xl justify-center pb-24 relative'>
+    <div className='mx-auto min-h-screen flex md:items-start items-start pt-12 md:px-8 px-3 max-w-7xl justify-center pb-24'>
       <article className='px-4'>
         <Link href='/blog'>
           <button className='transition hover:opacity-70 mb-4 hover:-translate-x-1'>
             <CgArrowLongLeft size={35} />
           </button>
         </Link>
+        <SectionWrapper delay={0.3}>
+          {mainImage && (
+            <img
+              className='left-1/2 -mx-[50vw] max-w-[100vw] relative right-1/2 w-[100vw] max-h-[60vh] object-cover mb-8'
+              src={urlFor(mainImage).url()}
+            />
+          )}
+        </SectionWrapper>
         <SectionWrapper delay={0.1}>
           <h1 className='font-extrabold text-7xl font-serif'>{title}</h1>
         </SectionWrapper>
@@ -89,7 +99,8 @@ const BlogPost = ({ post }) => {
             </span>
           </div>
         </SectionWrapper>
-        <SectionWrapper delay={0.3}>
+
+        <SectionWrapper delay={0.4}>
           <div className='mt-4 px-1'>
             <PortableText value={body} components={myPortableTextComponents} />
           </div>
