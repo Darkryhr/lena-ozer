@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import SectionWrapper from '@components/SectionWrapper';
 import Link from 'next/link';
-import { sanityClient } from '../../sanity';
-
+import { sanityClient, urlFor } from '../../sanity';
+import Image from 'next/image';
 export async function getStaticProps() {
   const posts = await sanityClient.fetch(`
     *[_type == "post"]{
@@ -12,6 +12,7 @@ _createdAt,
       "authorImage": author->image,
       "name": author->name,
       description,
+      mainImage,
       slug
     }
   `);
@@ -56,7 +57,12 @@ const Blog = ({ posts }) => {
         </select> */}
       </SectionWrapper>
       {sortedPosts.reverse().map((post, index) => (
-        <PostItem post={post} key={post._id} index={index + 1} />
+        <PostItem
+          post={post}
+          key={post._id}
+          index={index + 1}
+          imgUrl={urlFor(post.mainImage).url()}
+        />
       ))}
     </div>
   );
@@ -64,13 +70,15 @@ const Blog = ({ posts }) => {
 
 export default Blog;
 
-const PostItem = ({ post, index }) => {
+const PostItem = ({ post, index, imgUrl }) => {
   return (
     <SectionWrapper delay={index / 10}>
       <Link href={`/blog/${post.slug.current}`}>
-        <div className='w-full px-4 py-6 border-l-2 mb-8 border-rose-400 cursor-pointer transition duration-300 hover:-translate-y-1 hover:border-red-300'>
-          <h1 className='font-serif font-bold text-4xl'>{post.title}</h1>
-          <p className='mt-1 text-gray-600 '>{post.description}</p>
+        <div className='w-full px-4 py-6 border-l-2 mb-8 border-rose-400 cursor-pointer transition duration-300 hover:-translate-y-1 hover:border-red-300 flex items-center'>
+          <div className='flex flex-col'>
+            <h1 className='font-serif font-bold text-4xl'>{post.title}</h1>
+            <p className='mt-1 text-gray-600 '>{post.description}</p>
+          </div>
         </div>
       </Link>
     </SectionWrapper>

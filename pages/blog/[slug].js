@@ -59,13 +59,8 @@ const BlogPost = ({ post }) => {
   } = post;
 
   return (
-    <div className='mx-auto min-h-screen flex md:items-start items-start pt-12 md:px-8 px-3 max-w-7xl justify-center pb-24'>
+    <div className='mx-auto min-h-screen flex md:items-start items-start md:px-8 px-3 max-w-7xl justify-center pb-24'>
       <article className='px-4'>
-        <Link href='/blog'>
-          <button className='transition hover:opacity-70 mb-4 hover:-translate-x-1'>
-            <CgArrowLongLeft size={35} />
-          </button>
-        </Link>
         <SectionWrapper delay={0.3}>
           {mainImage && (
             <img
@@ -74,6 +69,11 @@ const BlogPost = ({ post }) => {
             />
           )}
         </SectionWrapper>
+        <Link href='/blog'>
+          <button className='transition hover:opacity-70 mb-4 hover:-translate-x-1'>
+            <CgArrowLongLeft size={35} />
+          </button>
+        </Link>
         <SectionWrapper delay={0.1}>
           <h1 className='font-extrabold text-7xl font-serif'>{title}</h1>
         </SectionWrapper>
