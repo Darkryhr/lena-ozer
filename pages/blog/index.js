@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from 'react';
 import SectionWrapper from '@components/SectionWrapper';
-import Link from 'next/link';
-import { sanityClient, urlFor } from '../../sanity';
 import Image from 'next/image';
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
+import { sanityClient, urlFor } from '../../sanity';
 export async function getStaticProps() {
   const posts = await sanityClient.fetch(`
     *[_type == "post"]{
@@ -21,7 +21,7 @@ _createdAt,
     props: {
       posts,
     },
-    revalidate: 60 * 60 * 24,
+    revalidate: 60,
   };
 }
 
