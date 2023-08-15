@@ -4,7 +4,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className='mx-auto flex md:items-center items-start md:pt-0 pt-12 px-8 max-w-7xl justify-center pb-24'>
+    <div className='mx-auto flex md:items-center items-start md:pt-0 pt-12 px-8 max-w-7xl justify-center pb-24 min-h-screen'>
       <div className='flex items-start justify-center md:space-x-6 md:flex-row flex-col relative'>
         <SectionWrapper delay={0.1}>
           <div
