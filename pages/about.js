@@ -21,13 +21,14 @@ const About = () => {
             </h1>
           </SectionWrapper>
           <SectionWrapper delay={0.2}>
-            <p className='mt-4 font-semibold text-red-600'>
-              Hello! I&apos;m Lena Ozer.
-            </p>
-            <div className='h-[1px] my-3 w-1/6 bg-red-400'></div>
-            <ul className='font-body text-gray-800 space-y-5 '>
+            <ul className='font-body text-gray-800 space-y-4 pl-5 mt-5'>
               <li className='relative'>
-                <span className='absolute top-0 -left-6'>🖍</span>I am a private
+                <span className='absolute top-0 -left-7'>👋</span>
+                Hello! I&apos;m Lena Ozer.
+              </li>
+
+              <li className='relative'>
+                <span className='absolute top-0 -left-7'>✏️</span>I am a private
                 tutor, creator of individual training programs for those with
                 whom I work, and a content creator. Since 2001, I have been
                 helping English learners reach their goals in reading, writing,
@@ -35,17 +36,18 @@ const About = () => {
                 other language skills.
               </li>
               <li className='relative'>
-                <span className='absolute top-0 -left-6'>🖍</span>
+                <span className='absolute top-0 -left-7'>✏️</span>
                 My professional work is focused on helping adults and children
                 alike learn the basics of the English language. I over 20 years
                 of experience teaching English in Israel both in person and
                 online. I currently live in Ashdod, Israel.
               </li>
               <li className='relative'>
-                <span className='absolute top-0 -left-6'>🖍</span>I spend my days
-                helping adults and schoolchildren from Russian-speaking families
-                learn English offline and online on Zoom, and selecting the
-                necessary learning resources for my students and for self-study.
+                <span className='absolute top-0 -left-7'>✏️</span>I spend my
+                days helping adults and schoolchildren from Russian-speaking
+                families learn English offline and online on Zoom, and selecting
+                the necessary learning resources for my students and for
+                self-study.
               </li>
               {/* <li className='relative'>
                 <span className='absolute top-0 -left-6'>🖍</span>
