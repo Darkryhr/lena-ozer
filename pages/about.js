@@ -10,7 +10,7 @@ const About = () => {
           <div
             className='w-[220px] h-[220px] rounded-full bg-center bg-no-repeat	bg-cover'
             style={{
-              backgroundImage: 'url(/profile.jpg)',
+              backgroundImage: 'url(/avatar.jpg)',
             }}
           ></div>
         </SectionWrapper>
