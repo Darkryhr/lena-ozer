@@ -4,7 +4,7 @@ import React from 'react';
 
 const About = () => {
   return (
-    <div className='mx-auto h-screen flex md:items-center items-start md:pt-0 pt-12 px-8 max-w-7xl justify-center pb-24'>
+    <div className='mx-auto flex md:items-center items-start md:pt-0 pt-12 px-8 max-w-7xl justify-center pb-24'>
       <div className='flex items-start justify-center md:space-x-6 md:flex-row flex-col relative'>
         <SectionWrapper delay={0.1}>
           <div
@@ -14,7 +14,7 @@ const About = () => {
             }}
           ></div>
         </SectionWrapper>
-        <div className='flex flex-col mt-6 md:max-w-2xl text-clip'>
+        <div className='flex flex-col mt-6 md:max-w-2xl'>
           <SectionWrapper delay={0.1}>
             <h1 className='text-5xl font-extrabold font-serif text-gray-900'>
               About yours truly,
