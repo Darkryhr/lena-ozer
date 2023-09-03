@@ -1,11 +1,10 @@
+import SectionWrapper from '@components/SectionWrapper';
+import { PortableText } from '@portabletext/react';
+import Image from 'next/image';
+import Link from 'next/link';
 import React from 'react';
 import { CgArrowLongLeft } from 'react-icons/cg';
-import { sanityClient, urlFor } from 'sanity';
-import { PortableText } from '@portabletext/react';
-import SectionWrapper from '@components/SectionWrapper';
-import Link from 'next/link';
-import Image from 'next/image';
-import { SanityImage } from 'sanity';
+import { SanityImage, sanityClient, urlFor } from 'sanity';
 
 export const getStaticPaths = async () => {
   const paths = await sanityClient.fetch(
@@ -56,21 +55,26 @@ const BlogPost = ({ post }) => {
     authorImage,
     body = [],
     mainImage,
+    _createdAt,
   } = post;
 
   return (
     <div className='mx-auto min-h-screen flex md:items-start items-start md:px-8 px-3 max-w-7xl justify-center pb-24'>
-      <article className='px-4'>
+      <article className='px-4 flex flex-col mt-8'>
         <SectionWrapper delay={0.3}>
           {mainImage && (
-            <img
-              className='left-1/2 -mx-[50vw] max-w-[100vw] relative right-1/2 w-[100vw] max-h-[60vh] object-cover mb-8'
+            <Image
+              className='left-1/2 -mx-[50vw] relative right-1/2 w-full object-cover rounded-lg'
               src={urlFor(mainImage).url()}
+              width={500}
+              height={250}
+              layout='responsive'
+              alt='placeholder'
             />
           )}
         </SectionWrapper>
         <Link href='/blog'>
-          <button className='transition hover:opacity-70 mb-4 hover:-translate-x-1'>
+          <button className='transition hover:opacity-70 mb-4 hover:-translate-x-1 mt-8'>
             <CgArrowLongLeft size={35} />
           </button>
         </Link>
@@ -115,7 +119,7 @@ export default BlogPost;
 const myPortableTextComponents = {
   block: {
     normal: ({ children }) => {
-      return <p className='my-5'>{children}</p>;
+      return <p className='my-5 leading-relaxed'>{children}</p>;
     },
   },
   types: {
